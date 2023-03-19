@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     'name'        => 'Hello World',
-    'description' => 'Mautic Plugin Boilerplate',
+    'description' => 'Mautic Plugin Boilerplate <br /> <a href="https://maticzagmajster.ddns.net/">Website</a>',
     'version'     => '0.0.0',
     'author'      => 'Matic Zagmajster',
 
@@ -36,3 +36,4 @@ return [
 
     'menu'        => [],  // end menu
 ];
+

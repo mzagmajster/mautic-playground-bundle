@@ -77,7 +77,9 @@ From plugin root folder you can also run the following commands during developme
 
 ## Contributing
 
-Please read ```CONTRIBUTING.md``` for details on our code of conduct, and the process for submitting pull requests to us.
+- If you have a suggestion for the feature or improvement consider opening an issue on GitHub (just make sure the same issue does not already exists).
+- If you want, you can open a pull request and I will make an effort to merge it.
+- Finally if this project was helpful to you consider supporting it with a donation via PayPal. Thank you!
 
 ## Versioning
 
