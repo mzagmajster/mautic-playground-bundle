@@ -79,7 +79,7 @@ From plugin root folder you can also run the following commands during developme
 
 - If you have a suggestion for the feature or improvement consider opening an issue on GitHub (just make sure the same issue does not already exists).
 - If you want, you can open a pull request and I will make an effort to merge it.
-- Finally if this project was helpful to you consider supporting it with a donation via [PayPal](https://github.com/mzagmajster/mautic-iso-code-bundle). **Thank you!**
+- Finally if this project was helpful to you consider supporting it with a donation via [PayPal](https://paypal.me/maticzagmajster). **Thank you!**
 
 ## Versioning
 
