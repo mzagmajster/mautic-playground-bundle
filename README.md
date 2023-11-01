@@ -45,9 +45,9 @@ From Mautic core composer.json remove usage of command (as it deletes the git di
 
 ```
 git clone <repo-url> <plugin-name>
-./bin/console plugin:init:env  Defines plugin namespace
-./bin/console dev:hooks  # Installs git hooks
-plugin:change:namespace  # Will work only once.
+./bin/manage.sh plugin:init:env  Defines plugin namespace
+./bin/manage.sh dev:hooks  # Installs git hooks
+./bin/manage.sh plugin:change:namespace  # Will work only once.
 ```
 
 ## Running the tests
