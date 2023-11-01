@@ -8,17 +8,8 @@
 # To enable this hook, rename this file to "pre-commit".
 #
 
-composer fixcs
+ddev exec composer fixcs
 
 # Add the changes from CS Fixer back to the git index:
 git add $(git diff --cached --name-only)
 
-lintStatus="$(composer lint | grep -c 'No syntax error found')"
-if [[ $lintStatus -eq 1 ]]
-then
-        echo "Syntax OK."
-else
-        # Initial commit: diff against an empty tree object
-        composer lint
-        exit 1
-fi

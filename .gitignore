@@ -3,4 +3,5 @@
 !.gitkeep
 vendor/*
 /.php_cs.cache
-
+/.env/*
+!/.env/.gitkeep
