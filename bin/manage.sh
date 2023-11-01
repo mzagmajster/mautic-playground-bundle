@@ -63,7 +63,7 @@ elif [[ $command == "dev:fixcs" ]]; then
 
 elif [[ $command == "plugin:change:namespace" ]]; then
     # Works only the first time.
-    find . -type f -exec sed -i 's/HelloWorldBundle/$PLUGIN_NAMESPACE/g' {} +
+    find . -type f -name '*.php' -exec sed -i s/HelloWorldBundle/"$PLUGIN_NAMESPACE"/g {} +
     mv HelloWorldBundle.php "$PLUGIN_NAMESPACE.php"
 
 elif [[ $command == "--help" ]]; then
