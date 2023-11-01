@@ -1,22 +1,15 @@
 # Mautic Plugin Boilerplate
 
-Empty Mautic plugin bundle (zero functionality). Tested on **Mautic 3.3.3**. Go ahead use this boilerplate and provide more custom functionality to Mautic - Open source Marketing Automation Tool.
+Empty Mautic plugin bundle (zero functionality). Tested on **Mautic 4**. Go ahead use this boilerplate and provide more custom functionality to Mautic - Open source Marketing Automation Tool.
 
 ## Getting Started
 
 ### Prerequisites
 
-* Composer 1
-* Mautic 3
-
+* Composer 2
+* Mautic 4
 
 ### Installing
-
-Use hooks from .githooks folder on project by executing:
-
-```
-./bin/init.sh
-```
 
 **Initial install** described below.
 
@@ -24,12 +17,11 @@ Use hooks from .githooks folder on project by executing:
 cd <mautic-root-folder>
 rm -rf var/cache/dev/* var/cache/prod/*
 cd plugins
-git clone <repo-url> MauticHelloWorldBundle
+git clone <repo-url> HelloWorldBundle
 cd <mautic-root-folder>
 composer install  # You only need this druing development.
 php bin/console mautic:plugins:install --dev  # You should get a message saying one or more plugins have been installed in terminal.
 ```
-
 
 Typical **update** of plugin source code described below.
 
@@ -38,9 +30,24 @@ Typical **update** of plugin source code described below.
 ```
 cd <mautic-root-folder>
 rm -rf var/cache/dev/* var/cache/prod/*
-cd plugins/MauticHelloWorldBundle
+cd plugins/HelloWorldBundle
 git pull origin <branch>
 php bin/console mautic:plugins:reload --dev  # You should get a message saying one or more plugins have been installed in terminal.
+```
+
+### Creating new plugin from this template
+
+From Mautic core composer.json remove usage of command (as it deletes the git directories and its useful not what you want):
+
+```
+@remove-git-submodules
+```
+
+```
+git clone <repo-url> <plugin-name>
+./bin/console plugin:init:env  Defines plugin namespace
+./bin/console dev:hooks  # Installs git hooks
+plugin:change:namespace  # Will work only once.
 ```
 
 ## Running the tests
@@ -49,13 +56,7 @@ php bin/console mautic:plugins:reload --dev  # You should get a message saying o
 
 ### Coding style
 
-Please refer to PHP CS file for details on coding styles.
-
-From plugin root folder you can also run the following commands during development.
-
-* ```composer lint``` - Checks the PHP syntax.
-* ```composer checkcs``` - Checks code formatting && show what should be fixed (does not touch source files).
-* ```composer fixcs``` - Fixes code formatting (updates soruce files).
+Please refer to Mautic core repository for coding styles in this plugin.
 
 ## Deployment
 

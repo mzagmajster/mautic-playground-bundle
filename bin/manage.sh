@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#
+# Most of this script should be used inside ddev container
+#
+
 # Relative path to boilerplate variables
 BOILERPLATE_FILE_PATH="./.env/boilerplate.env"
 # Path in ddev container
@@ -13,7 +17,7 @@ function get_env_value() {
 }
 
 function help_message() {
-    echo "help message pada"
+    echo "[todo]"
 }
 
 function script_info() {
@@ -34,7 +38,7 @@ script_info
 
 command=$1
 if [[ $command == "plugin:init:env" ]]; then
-    read -p "Mautic root folder [/var/www/html]: " mautic_root
+    read -p "Mautic root folder (in DDEV container) [/var/www/html]: " mautic_root
     if [[ -z "$mautic_root" ]]; then
         mautic_root=$MAUTIC_ROOT_FOLDER
     fi;
@@ -57,8 +61,10 @@ elif [[ $command == "dev:fixcs" ]]; then
     composer fixcs
     cd $PLUGIN_FOLDER
 
-elif [[ $command == "plugin:namespace" ]]; then
-    echo "plugin namespace"
+elif [[ $command == "plugin:change:namespace" ]]; then
+    # Works only the first time.
+    find . -type f -exec sed -i 's/HelloWorldBundle/$PLUGIN_NAMESPACE/g' {} +
+    mv HelloWorldBundle.php "$PLUGIN_NAMESPACE.php"
 
 elif [[ $command == "--help" ]]; then
     help_message
