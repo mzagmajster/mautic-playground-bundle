@@ -34,5 +34,16 @@ return [
         ],  // end services.other
     ],
 
+    'commands' => [
+        'mautic_command.mz_play_test' => [
+            'tag'       => 'console.command',
+            'class'     => MauticPlugin\MauticPlaygroundBundle\Command\PlayTestCommand::class,
+            'arguments' => [
+                'mautic.helper.integration',
+                'templating.helper.translator',
+            ],
+        ],
+    ],
+
     'menu'        => [],  // end menu
 ];
