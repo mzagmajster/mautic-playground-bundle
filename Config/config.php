@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'name'        => 'HelloWorldBundle',
+    'name'        => 'MauticPlaygroundBundle',
     'description' => 'MZagmajster Mautic Plugin Boilerplate <br /> <a href="https://maticzagmajster.ddns.net/">Website</a>',
     'version'     => '0.0.0',
     'author'      => 'Matic Zagmajster',
